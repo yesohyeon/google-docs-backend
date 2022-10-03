@@ -2,7 +2,7 @@ const app = require("../app");
 const http = require("http");
 const webSocket = require("../config/webSocket");
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8001;
 
 app.set("port", port);
 

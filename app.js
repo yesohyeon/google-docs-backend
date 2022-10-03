@@ -9,6 +9,7 @@ const { authenticateJwt } = require("./middlewares/authenticate");
 const connectMongoDB = require("./config/connectMongoDB");
 
 const indexRouter = require("./routes/indexRouter");
+const documentRouter = require("./routes/documentRouter");
 
 const errorHandler = require("./middlewares/errorHandler");
 const invalidUrlHandler = require("./middlewares/invalidUrlHandler");
@@ -19,7 +20,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
-  origin: "*",
+  origin: process.env.CLIENT_URL,
   credentials: true,
 }));
 
@@ -27,6 +28,7 @@ connectMongoDB();
 
 app.use(authenticateJwt);
 app.use("/", indexRouter);
+app.use("/documents", documentRouter);
 
 app.use(invalidUrlHandler);
 app.use(errorHandler);
