@@ -14,7 +14,7 @@ const webSocket = (server) => {
   io.on("connection", (socket) => {
     socket.on("get_document", async (documentId, username) => {
       try {
-        const document = await Document.findById(documentId);
+        const document = await Document.findById(documentId).populate("creator");
 
         socket.join(documentId);
 
@@ -26,7 +26,7 @@ const webSocket = (server) => {
 
         socket.emit("inform_collaborator", usersWithInfo);
 
-        socket.emit("load_document", document.body);
+        socket.emit("load_document", document.body, document.creator.googleId);
 
         socket.on("send_changes", (delta) => {
           socket.broadcast.to(documentId).emit("receive_changes", delta);
