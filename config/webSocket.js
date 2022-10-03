@@ -22,21 +22,26 @@ const webSocket = (server) => {
 
         socket.emit("load_document", document.body, document.creator.googleId);
 
-        socket.broadcast.to(documentId).emit("show_my_cursor", { id: socket.id, nickname: socket.nickname });
+        socket.broadcast.to(documentId).emit(
+          "show_my_cursor", { id: socket.id, nickname: socket.nickname }
+        );
 
         const connectedUsers = [];
         const sockets = await io.in(documentId).fetchSockets();
 
         sockets.forEach((userSocket) => {
           if (userSocket.id !== socket.id) {
-            connectedUsers.push({ id: userSocket.id, nickname: userSocket.nickname });
+            connectedUsers.push({
+              id: userSocket.id,
+              nickname: userSocket.nickname
+            });
           }
         })
 
         socket.emit("show_other_cursors", connectedUsers);
 
         socket.on("send_changes", (delta) => {
-          socket.broadcast.to(documentId).emit("receive_changes", delta);
+          socket.broadcast.to(documentId).emit("receive_changes", delta, documentId);
         });
 
         socket.on("send_selection", function (data) {
