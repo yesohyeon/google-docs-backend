@@ -1,0 +1,13 @@
+const app = require("../app");
+const http = require("http");
+const webSocket = require("../config/webSocket");
+
+const port = process.env.PORT || 8000;
+
+app.set("port", port);
+
+const server = http.createServer(app);
+
+server.listen(port, () => console.log(`✅ Server listening on http://localhost:${port}`));
+
+webSocket(server);
