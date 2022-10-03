@@ -2,7 +2,7 @@ const express = require("express");
 const {
   getOwnDocuments,
   postNewDocument,
-  putDocument,
+  patchDocument,
   deleteDocument
 } = require("./controllers/documentController");
 
@@ -10,7 +10,7 @@ const documentRouter = express.Router();
 
 documentRouter.get("/:googleId", getOwnDocuments);
 documentRouter.post("/", postNewDocument);
-documentRouter.put("/:documentId", putDocument);
+documentRouter.patch("/:documentId", patchDocument);
 documentRouter.delete("/:documentId", deleteDocument);
 
 

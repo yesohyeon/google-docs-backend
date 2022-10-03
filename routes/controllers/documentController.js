@@ -22,7 +22,7 @@ module.exports = {
 
       const documents = await Document.find({ creator: user._id });
 
-      return res.status(200).send({ documents });
+      res.status(200).send({ documents });
     } catch (err) {
       next(err);
     }
@@ -47,12 +47,12 @@ module.exports = {
         body: defaultValue,
       });
 
-      return res.status(201).send({ documentId: newDocument._id });
+      res.status(201).send({ documentId: newDocument._id });
     } catch (err) {
       next(err);
     }
   },
-  putDocument: async function(req, res, next) {
+  patchDocument: async function(req, res, next) {
     try {
       const { body } = req.body;
       const { documentId } = req.params;
@@ -71,7 +71,7 @@ module.exports = {
 
       await document.save();
 
-      return res.sendStatus(200);
+      res.sendStatus(200);
     } catch (err) {
       next(err);
     }
@@ -86,7 +86,7 @@ module.exports = {
 
       await Document.findByIdAndDelete(documentId);
 
-      return res.sendStatus(200);
+      res.sendStatus(200);
     } catch (err) {
       next(err);
     }

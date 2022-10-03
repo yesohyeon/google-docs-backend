@@ -11,7 +11,7 @@ module.exports = {
         await User.create({ username, googleId });
       }
 
-      return res.status(200).send();
+      res.sendStatus(200);
     } catch (err) {
       next(err);
     }

@@ -20,6 +20,8 @@ const webSocket = (server) => {
 
         socket.join(documentId);
 
+        socket.emit("load_document", document.body, document.creator.googleId);
+
         socket.broadcast.to(documentId).emit("show_my_cursor", { id: socket.id, nickname: socket.nickname });
 
         const connectedUsers = [];
@@ -32,8 +34,6 @@ const webSocket = (server) => {
         })
 
         socket.emit("show_other_cursors", connectedUsers);
-
-        socket.emit("load_document", document.body, document.creator.googleId);
 
         socket.on("send_changes", (delta) => {
           socket.broadcast.to(documentId).emit("receive_changes", delta);
