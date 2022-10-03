@@ -16,15 +16,22 @@ const webSocket = (server) => {
       try {
         const document = await Document.findById(documentId).populate("creator");
 
+        socket.nickname = username;
+
         socket.join(documentId);
 
-        socket.broadcast.to(documentId).emit("user_join", { id: socket.id, nickname: username });
+        socket.broadcast.to(documentId).emit("show_my_cursor", { id: socket.id, nickname: socket.nickname });
 
-        const users = Array.from(io.sockets.adapter.rooms.get(documentId)).filter((item) => item !== socket.id);
+        const connectedUsers = [];
+        const sockets = await io.in(documentId).fetchSockets();
 
-        const usersWithInfo = users.map((user) => ({ id: user, nickname: io.sockets.sockets.get(user).nickname }));
+        sockets.forEach((userSocket) => {
+          if (userSocket.id !== socket.id) {
+            connectedUsers.push({ id: userSocket.id, nickname: userSocket.nickname });
+          }
+        })
 
-        socket.emit("inform_collaborator", usersWithInfo);
+        socket.emit("show_other_cursors", connectedUsers);
 
         socket.emit("load_document", document.body, document.creator.googleId);
 
@@ -43,7 +50,6 @@ const webSocket = (server) => {
             await Document.findByIdAndUpdate(documentId, { body });
           }
         });
-
       } catch (err) {
         console.error(err);
       }
