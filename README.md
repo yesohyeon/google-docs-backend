@@ -1,25 +1,32 @@
 <h1 align="center">
-  Google dogs
+    Google dogs
 </h1>
 
 <br/>
 <br/>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Frontend-React-blue.svg" alt="Frontend-React">
-  <img src="https://img.shields.io/badge/Database-Mongo-green.svg" alt="Database-Mongo">
-  <img src="https://img.shields.io/badge/Backend-Node%20&%20Express-green.svg" alt="Backend-Node-Express">
+    <img src="https://img.shields.io/badge/Frontend-React-blue.svg" alt="Frontend-React">
+    <img src="https://img.shields.io/badge/Database-Mongo-green.svg" alt="Database-Mongo">
+    <img src="https://img.shields.io/badge/Backend-Node%20&%20Express-green.svg" alt="Backend-Node-Express">
 </p>
 
 <p align="center">
-  <img style="width:230px"
+    <img style="width:230px"
  src="https://user-images.githubusercontent.com/93248242/193749246-86d8ca63-9c00-451c-9a52-bc61271ba18e.png" alt="Usepool-Logo">
 </p>
 
-**MERN Stack**과 socket.io를 이용한 문서작업용 실시간 협업 툴 web application
+<p align="center">
+    MERN Stack과 socket.io를 이용한 문서작업용 실시간 협업 툴 web application
+</p>
 
+<br/>
+<br/>
 
 <img style="width:500px" src="https://user-images.githubusercontent.com/93248242/193782037-963bf91f-095f-4224-a371-c2b1e766b9a0.mp4" alt="google-dogs">
+
+<br/>
+<br/>
 
 ## Index
 
