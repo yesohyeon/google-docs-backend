@@ -9,6 +9,10 @@
     <img src="https://img.shields.io/badge/Frontend-React-blue.svg" alt="Frontend-React">
     <img src="https://img.shields.io/badge/Database-Mongo-green.svg" alt="Database-Mongo">
     <img src="https://img.shields.io/badge/Backend-Node%20&%20Express-green.svg" alt="Backend-Node-Express">
+    <img src="https://github.com/DenisOH/pyheroku-badge/raw/master/img/deployed.svg?sanitize=true" alt="Heroku">
+    <a href="https://app.netlify.com/sites/coruscating-creponne-91f904/deploys" title="Netlify-deploy-status">
+        <img src="https://api.netlify.com/api/v1/badges/dc73ec3b-0757-493d-9ec0-5dfce4a57810/deploy-status" alt="Netlify-deploy-status">
+    </a>
 </p>
 
 <p align="center">
@@ -35,10 +39,11 @@
 3. [UI 예시](#UI-예시)
 4. [디렉토리 구조](#디렉토리-구조)
 5. [데이터 구조](#데이터-구조)
-6. [사전 설치](#사전-설치)
-7. [작업 방법](#작업-방법)
-8. [도전했던 기술](#도전했던-기술)
-9. [마무리하며...](#마무리하며)
+6. [Demo](#Demo)
+7. [사전 설치](#사전-설치)
+8. [작업 방법](#작업-방법)
+9. [도전했던 기술](#도전했던-기술)
+10. [마무리하며...](#마무리하며)
 
 <br/>
 <br/>
@@ -147,6 +152,13 @@ Document editor page - /documents/:documentId
 <img width="405" alt="image" src="https://user-images.githubusercontent.com/93248242/193759114-779cc8af-634a-4907-979c-6a50f4ebc294.png">
 
 https://lucid.app/lucidchart/7a120ba7-2cc6-442d-a811-86fbe1790ca4/edit?viewport_loc=61%2C59%2C2219%2C1075%2C0_0&invitationId=inv_ed9386cc-5c55-43f1-b59d-47184b0b83b4#
+
+<br/>
+<br/>
+
+## Demo
+
+https://coruscating-creponne-91f904.netlify.app/login
 
 <br/>
 <br/>
