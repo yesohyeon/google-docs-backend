@@ -5,7 +5,7 @@ const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
 
-const { authenticateJwt } = require("./middlewares/authenticate");
+const { authenticate } = require("./middlewares/authenticate");
 const connectMongoDB = require("./config/connectMongoDB");
 
 const indexRouter = require("./routes/indexRouter");
@@ -26,7 +26,7 @@ app.use(cors({
 
 connectMongoDB();
 
-app.use(authenticateJwt);
+app.use(authenticate);
 app.use("/", indexRouter);
 app.use("/documents", documentRouter);
 

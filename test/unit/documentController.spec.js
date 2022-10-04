@@ -14,7 +14,7 @@ beforeEach(() => {
   res = {
     status: jest.fn().mockReturnThis(),
     send: jest.fn(),
-  }
+  };
   next = jest.fn();
 
   User.findOne = jest.fn();

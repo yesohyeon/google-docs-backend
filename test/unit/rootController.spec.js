@@ -27,25 +27,21 @@ describe("PostLogin", () => {
 
   it("Don't call User.create when user with given googleId is found", async () => {
     req.body = { username: "test name", googleId: "test googleId" };
-
     User.findOne.mockReturnValue(user);
 
     await rootController.postLogin(req, res, next);
 
     expect(User.create).not.toBeCalled();
-
     expect(res.statusCode).toBe(200);
   });
 
   it("Call User.create when user with given googleId is not found", async () => {
     req.body = { username: "test name", googleId: "test googleId" };
-
     User.findOne.mockReturnValue(null);
 
     await rootController.postLogin(req, res, next);
 
     expect(User.create).toBeCalled();
-
     expect(res.statusCode).toBe(200);
   });
 });

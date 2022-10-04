@@ -20,7 +20,9 @@ module.exports = {
         return next(createError(400, ERROR.INVALID_USER));
       }
 
-      const documents = await Document.find({ creator: user._id });
+      const documents = await Document
+        .find({ creator: user._id })
+        .sort({ updatedAt: -1 });
 
       res.status(200).send({ documents });
     } catch (err) {

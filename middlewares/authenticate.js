@@ -1,7 +1,7 @@
 const admin = require("../config/firebase");
 
 module.exports = {
-  authenticateJwt: async function (req, res, next) {
+  authenticate: async function (req, res, next) {
     try {
       const authHeader = req.headers["authorization"];
       const token = authHeader && authHeader.split(" ")[1];

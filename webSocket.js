@@ -1,7 +1,7 @@
 const { Server } = require("socket.io");
 const { isEqual } = require("lodash");
 
-const Document = require("../models/Document");
+const Document = require("./models/Document");
 
 const webSocket = (server) => {
   const io = new Server(server, {
@@ -33,7 +33,7 @@ const webSocket = (server) => {
           if (userSocket.id !== socket.id) {
             connectedUsers.push({
               id: userSocket.id,
-              nickname: userSocket.nickname
+              nickname: userSocket.nickname,
             });
           }
         })

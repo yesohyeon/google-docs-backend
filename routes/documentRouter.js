@@ -13,5 +13,4 @@ documentRouter.post("/", postNewDocument);
 documentRouter.patch("/:documentId", patchDocument);
 documentRouter.delete("/:documentId", deleteDocument);
 
-
 module.exports = documentRouter;

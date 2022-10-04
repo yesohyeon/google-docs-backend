@@ -11,4 +11,4 @@ module.exports = async () => {
 };
 
 db.once("open", () => console.log("Connected to database.."));
-db.on("error", () => console.log("connection error"));
+db.on("error", () => console.log("Connection error"));
