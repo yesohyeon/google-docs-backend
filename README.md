@@ -112,26 +112,26 @@ Document editor page - /documents/:documentId
 - Frontend
 
 ```bash
+.
 ├── App.js
+├── Pages.js
 ├── api
 │   └── axiosInstance.js
-├── component
+├── components
 │   ├── DocumentCard.js
 │   ├── NavBar.js
-│   ├── TextEditor
-│   │   ├── TextEditor.js
-│   │   └── styles.css
-│   └── spec
-│       └── unit
-│           └── DocumentCard.spec.js
+│   ├── NotFound.js
+│   └── TextEditor
+│       ├── TextEditor.js
+│       └── styles.css
 ├── config
-│   └── firebase.js
+│   ├── firebase.js
+│   └── setUpProxy.js
 ├── constants
 │   └── error.js
 ├── context
 │   ├── AuthProvider.js
 │   └── userContext.js
-├── frontend.txt
 ├── hooks
 │   └── useSocket.js
 ├── index.css
@@ -141,8 +141,11 @@ Document editor page - /documents/:documentId
 │   ├── Login.js
 │   └── MyDocuments.js
 ├── setupTests.js
+├── spec
+│   └── unit
+│       └── DocumentCard.spec.js
 └── utils
-└── selectionChangeHandler.js
+    └── selectionChangeHandler.js
 ```
 
 - Backend
@@ -150,7 +153,6 @@ Document editor page - /documents/:documentId
 ```bash
 .
 ├── app.js
-├── backend.txt
 ├── bin
 │   └── www.js
 ├── config
@@ -215,7 +217,7 @@ $ npm install
 
 ```sh
 $ npm start
-# Visit http://localhost:3000 from your browser (Chrome)
+# Visit http://localhost:8001
 ```
 
 <br/>
