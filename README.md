@@ -109,19 +109,56 @@ Document editor page - /documents/:documentId
 
 ## 디렉토리 구조
 
+- Frontend
+
+```bash
+├── App.js
+├── api
+│   └── axiosInstance.js
+├── component
+│   ├── DocumentCard.js
+│   ├── NavBar.js
+│   ├── TextEditor
+│   │   ├── TextEditor.js
+│   │   └── styles.css
+│   └── spec
+│       └── unit
+│           └── DocumentCard.spec.js
+├── config
+│   └── firebase.js
+├── constants
+│   └── error.js
+├── context
+│   ├── AuthProvider.js
+│   └── userContext.js
+├── frontend.txt
+├── hooks
+│   └── useSocket.js
+├── index.css
+├── index.js
+├── pages
+│   ├── Document.js
+│   ├── Login.js
+│   └── MyDocuments.js
+├── setupTests.js
+└── utils
+└── selectionChangeHandler.js
+```
+
+- Backend
+
 ```bash
 .
-├── README.md
 ├── app.js
 ├── backend.txt
 ├── bin
 │   └── www.js
 ├── config
 │   ├── connectMongoDB.js
-│   └── firebase.js
+│   ├── firebase.js
+│   └── serviceAccountKey.json
 ├── constants
 │   └── error.js
-├── jest.config.js
 ├── middlewares
 │   ├── authenticate.js
 │   ├── errorHandler.js
@@ -129,14 +166,12 @@ Document editor page - /documents/:documentId
 ├── models
 │   ├── Document.js
 │   └── User.js
-├── package-lock.json
-├── package.json
 ├── routes
 │   ├── controllers
 │   │   ├── documentController.js
-│   │   └── rootController.js
+│   │   └── loginController.js
 │   ├── documentRouter.js
-│   └── indexRouter.js
+│   └── loginRouter.js
 ├── test
 │   └── unit
 │       ├── documentController.spec.js

@@ -1,6 +1,6 @@
 const httpMocks = require("node-mocks-http");
 
-const rootController = require("../../routes/controllers/rootController");
+const rootController = require("../../routes/controllers/loginController");
 const User = require("../../models/User");
 
 const user = { _id: "test id", username: "test name", googleId: "test googleId" };

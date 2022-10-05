@@ -8,7 +8,7 @@ const cors = require("cors");
 const { authenticate } = require("./middlewares/authenticate");
 const connectMongoDB = require("./config/connectMongoDB");
 
-const indexRouter = require("./routes/indexRouter");
+const loginRouter = require("./routes/loginRouter");
 const documentRouter = require("./routes/documentRouter");
 
 const errorHandler = require("./middlewares/errorHandler");
@@ -27,7 +27,7 @@ app.use(cors({
 connectMongoDB();
 
 app.use(authenticate);
-app.use("/", indexRouter);
+app.use("/google", loginRouter);
 app.use("/documents", documentRouter);
 
 app.use(invalidUrlHandler);
