@@ -1,4 +1,7 @@
+const createError = require("http-errors");
+
 const admin = require("../config/firebase");
+const ERROR = require("../constants/error");
 
 module.exports = {
   authenticate: async function (req, res, next) {
@@ -11,6 +14,8 @@ module.exports = {
         req.user = user;
 
         next();
+      } else {
+        next(createError(400, ERROR.INVALID_USER));
       }
     } catch (err) {
       next(err);

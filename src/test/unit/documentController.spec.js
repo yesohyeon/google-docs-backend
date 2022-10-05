@@ -5,7 +5,11 @@ const User = require("../../models/User");
 const Document = require("../../models/Document");
 
 const user = { _id: "test user id", username: "test name", googleId: "test googleId" };
-const documents = { "_id": "test document id", "creator": "test creator id", "body": "test body" };
+const documents = {
+  "_id": "test document id",
+  "creator": "test creator id",
+  "body": "test body"
+};
 let req, res, next;
 
 beforeEach(() => {
@@ -18,7 +22,10 @@ beforeEach(() => {
   next = jest.fn();
 
   User.findOne = jest.fn();
-  Document.find = jest.fn();
+  Document.find = jest.fn()
+    .mockImplementationOnce(
+      () => ({ sort: jest.fn().mockResolvedValueOnce(documents) })
+    );
   Document.create = jest.fn();
 });
 
@@ -55,7 +62,6 @@ describe("GetOwnDocuments", () => {
   it("Return 200 response code and send document when document is found", async () => {
     req.params.googleId = "test googleId";
     User.findOne.mockReturnValue(user);
-    Document.find.mockReturnValue(documents);
 
     await documentController.getOwnDocuments(req, res, next);
 

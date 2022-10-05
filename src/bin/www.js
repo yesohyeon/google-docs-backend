@@ -1,5 +1,5 @@
 const app = require("../app");
-const debug = require("debug")("voting-platform:server");
+const debug = require("debug");
 const http = require("http");
 const webSocket = require("../webSocket");
 

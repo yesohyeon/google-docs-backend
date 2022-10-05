@@ -29,7 +29,7 @@ module.exports = {
       next(err);
     }
   },
-  postNewDocument: async function(req, res, next) {
+  postNewDocument: async function (req, res, next) {
     try {
       const { googleId } = req.body;
 
@@ -54,7 +54,7 @@ module.exports = {
       next(err);
     }
   },
-  patchDocument: async function(req, res, next) {
+  patchDocument: async function (req, res, next) {
     try {
       const { body } = req.body;
       const { documentId } = req.params;
@@ -78,7 +78,7 @@ module.exports = {
       next(err);
     }
   },
-  deleteDocument: async function(req, res, next) {
+  deleteDocument: async function (req, res, next) {
     try {
       const { documentId } = req.params;
 

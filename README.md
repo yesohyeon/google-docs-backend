@@ -175,7 +175,7 @@ Document editor page - /documents/:documentId
 ├── test
 │   └── unit
 │       ├── documentController.spec.js
-│       └── rootController.spec.js
+│       └── loginController.spec.js
 └── webSocket.js
 ```
 

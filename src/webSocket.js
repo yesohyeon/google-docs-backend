@@ -44,7 +44,7 @@ const webSocket = (server) => {
           socket.broadcast.to(documentId).emit("receive_changes", delta, documentId);
         });
 
-        socket.on("send_selection", function (data) {
+        socket.on("send_selection", (data) => {
           socket.broadcast.to(documentId).emit("receive_selection", data);
         });
 
